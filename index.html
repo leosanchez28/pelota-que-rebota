@@ -4,10 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pelota que rebota</title>
-     <script src="https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"></script>
-    <script src="sketch.js".js
-    ></script>
-    
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #787878;
+        }
+        h1 {
+            position: fixed;
+            top: 8px;
+            left: 12px;
+            margin: 0;
+            font-size: 18px;
+            z-index: 10;
+            pointer-events: none;
+        }
+    </style>
+    <script src="lib/p5.min.js"></script>
+    <script>
+        // p5.sound usa AudioWorklets que el navegador bloquea desde file://,
+        // asi que solo lo cargamos si la pagina se abre por http/https.
+        if (location.protocol !== 'file:') {
+            document.write('<script src="lib/p5.sound.min.js"><\/script>');
+        }
+    </script>
+    <script>p5.disableFriendlyErrors = true;</script>
+    <script src="sketch.js"></script>
 </head>
 <body>
     <h1>Pelota que rebota</h1>
